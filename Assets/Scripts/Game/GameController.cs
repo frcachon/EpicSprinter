@@ -24,10 +24,10 @@ public class GameController : MonoBehaviour {
     public TextMeshProUGUI recordText;
     public TextMeshProUGUI newCoinsInfoText;
 
-    enum ExecutionModes {
-        Easy,
-        Hard
-    };
+    // enum ExecutionModes {
+    //     Easy,
+    //     Hard
+    // };
 
     // this is just executed once (at the beginning), so the initial values are set here
     void Start() {
