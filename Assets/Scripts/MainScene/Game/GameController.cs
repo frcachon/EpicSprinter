@@ -24,6 +24,10 @@ public class GameController : MonoBehaviour {
     public TextMeshProUGUI recordText;
     public TextMeshProUGUI newCoinsInfoText;
 
+    public GameObject gameController;
+    private FaderScript faderScript;
+    private float fade;
+
     // enum ExecutionModes {
     //     Easy,
     //     Hard
@@ -31,6 +35,7 @@ public class GameController : MonoBehaviour {
 
     // this is just executed once (at the beginning), so the initial values are set here
     void Start() {
+        faderScript = gameController.GetComponent<FaderScript>();
         coinsCount = 0;
         coinsText.text = "$ 0";
 
@@ -43,6 +48,14 @@ public class GameController : MonoBehaviour {
         newCoinsInfoText.text = "";
 
         LoadData();
+    }
+
+    // coroutine provided for Lab3, adapted for the game
+    IEnumerator ChangeLevel() {
+        yield return new WaitForSeconds(4);
+        fade = faderScript.BeginFade(1);
+        yield return new WaitForSeconds(1);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0); // 0 is the index of MainMenuScene
     }
 
     //as the saved data is not sensitive, it can be saved using PlayerPrefs (it is not encrypted)
@@ -63,13 +76,6 @@ public class GameController : MonoBehaviour {
     void LoadData() {
         allTimeCoins = PlayerPrefs.GetInt("AllTimeCoins");
         highestScore = PlayerPrefs.GetInt("HighestScore");
-    }
-
-    // this method restarts the scene 4 seconds after the player loses
-    // it is invoked within EndOfGame()
-    void Restart () {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(
-            UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
     }
 
     // function triggered when colliding with objects tagged as PickUp
@@ -95,7 +101,7 @@ public class GameController : MonoBehaviour {
         lostText.text = "You ran " + distanceCount + "m!";
         newCoinsInfoText.text = "New coins: $" + coinsCount + "\n Total coins: $" + allTimeCoins;
         
-        Invoke("Restart", 4);
+        StartCoroutine(ChangeLevel());
     }
 
     void Update() {
