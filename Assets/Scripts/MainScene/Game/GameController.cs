@@ -69,7 +69,7 @@ public class GameController : MonoBehaviour {
     // it is invoked within EndOfGame()
     void Restart () {
         UnityEngine.SceneManagement.SceneManager.LoadScene(
-            UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+            UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
     }
 
     // function triggered when colliding with objects tagged as PickUp
