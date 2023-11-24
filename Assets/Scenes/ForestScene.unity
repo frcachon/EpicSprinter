@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 2ff2400289fae4db3ae9d3783c037420, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -800,7 +800,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd99b8809a0694d70acd58c7df63035a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameLost: 0
+  isPlaying: 0
   coinFX: {fileID: 71232317}
   coinsText: {fileID: 2030714178}
   distanceText: {fileID: 1408427676}
