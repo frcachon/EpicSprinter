@@ -16,7 +16,7 @@ public class GameController : MonoBehaviour {
 
     // this is kind of a global state in order to know whether to execute 
     // functions or not (and optimise the game)
-    public bool gameLost;
+    public bool isPlaying;
     public AudioSource coinFX;
     public TextMeshProUGUI coinsText;
     public TextMeshProUGUI distanceText;
@@ -42,7 +42,7 @@ public class GameController : MonoBehaviour {
         distanceCount = 0;
         distanceText.text = "Distance: 0";
 
-        gameLost = false;
+        isPlaying = true;
         lostText.text = "";
         recordText.text = "";
         newCoinsInfoText.text = "";
@@ -93,7 +93,7 @@ public class GameController : MonoBehaviour {
 
     // function executed just once (when the player collides with an obstacle)
     public void EndOfGame() {
-        gameLost = true;
+        isPlaying = false;
         SaveData();
 
         distanceText.text = "";
@@ -105,7 +105,7 @@ public class GameController : MonoBehaviour {
     }
 
     void Update() {
-        if (!gameLost) {
+        if (isPlaying) {
             SetDistanceText();
         }
     }

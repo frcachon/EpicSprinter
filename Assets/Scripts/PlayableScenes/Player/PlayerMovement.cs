@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour {
 
         // whenever the character moves horizontally, it rotates to be more realistic
         float horizontalInput = Input.GetAxis("Horizontal");
-        if (!gc.gameLost) {
+        if (gc.isPlaying) {
             Quaternion quat = Quaternion.Euler(0, horizontalInput * rotationAngle, 0);
             transform.rotation = Quaternion.Slerp(transform.rotation, quat,  Time.deltaTime * smoothness);
         }

@@ -777,14 +777,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f85b732cc9ad4fe8bb1d8e6d9272557, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameController: {fileID: 261776450}
   worlds:
   - {fileID: 2052092860}
   - {fileID: 1090214171}
   - {fileID: 1333131753}
-  zPos: 50
-  creatingSection: 0
+  zPosWorld: 50
+  creatingWorld: 0
   secNum: 0
-  gameController: {fileID: 261776450}
+  terrain: {fileID: 1162594056}
+  zPosTerrain: 125
+  creatingTerrain: 0
 --- !u!114 &261776454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2392,7 +2395,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0.23687872, y: -0, z: -0, w: 0.97153926}
-  m_LocalPosition: {x: 0, y: 5.44, z: -8.99}
+  m_LocalPosition: {x: 0, y: 5.72, z: -6.51}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2596,6 +2599,7 @@ GameObject:
   - component: {fileID: 1162594059}
   - component: {fileID: 1162594058}
   - component: {fileID: 1162594057}
+  - component: {fileID: 1162594060}
   m_Layer: 0
   m_Name: Terrain
   m_TagString: Untagged
@@ -2677,6 +2681,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1162594060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162594056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 069b1c33254564be0b4a33ccb3e35edf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentName: 
 --- !u!1 &1224504896
 GameObject:
   m_ObjectHideFlags: 0
