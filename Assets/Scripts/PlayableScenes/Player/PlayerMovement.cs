@@ -73,10 +73,10 @@ public class PlayerMovement : MonoBehaviour {
 
         if (isJumping) {
             if (!comingDown) {
-                transform.Translate(Vector3.up * Time.deltaTime * 11);
+                transform.Translate(Vector3.up * Time.deltaTime * 10);
             }
             if (comingDown) {
-                transform.Translate(Vector3.up * Time.deltaTime * -11);
+                transform.Translate(Vector3.up * Time.deltaTime * -10);
             }
         }
 
@@ -89,13 +89,14 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     IEnumerator JumpSequence() {
-        //player.GetComponent<Animator>().Play("Running Jump");
         yield return new WaitForSeconds(0.4f);
         comingDown = true;
         yield return new WaitForSeconds(0.4f);
         isJumping = false;
         comingDown = false;
+        if (gc.isPlaying) {
         player.GetComponent<Animator>().Play("Goofy Running");
+        }
     }
 
 }
