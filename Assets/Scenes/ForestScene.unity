@@ -800,6 +800,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd99b8809a0694d70acd58c7df63035a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerMovement: {fileID: 623698588}
   audioMixer: {fileID: 24100000, guid: 12a289b4beff34e39bb5a9d8cddda681, type: 2}
   audioSource: {fileID: 954218894}
   isPlaying: 0

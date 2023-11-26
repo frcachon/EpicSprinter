@@ -7,6 +7,10 @@ using TMPro;
 
 public class GameController : MonoBehaviour {
 
+    // player controller in order to know velocities (and calculate distance)
+    public GameObject playerMovement;
+    private PlayerMovement pm;
+
     // historic and saved values
     private int allTimeCoins;
     private int highestScore;
@@ -38,6 +42,8 @@ public class GameController : MonoBehaviour {
     // this is just executed once (at the beginning), so the initial values are set here
     void Start() {
         faderScript = gameController.GetComponent<FaderScript>();
+        pm = playerMovement.GetComponent<PlayerMovement>();
+
         coinsCount = 0;
         coinsText.text = "$ 0";
 
@@ -100,7 +106,7 @@ public class GameController : MonoBehaviour {
 
     // function executed once per frame while the player doesn't lose
     public void SetDistanceText() {
-        distanceCount = Math.Round(Time.timeSinceLevelLoad * 5);
+        distanceCount = Math.Round(Time.timeSinceLevelLoad * pm.horizontalSpeed/2);
         distanceText.text = "Distance: " + distanceCount.ToString();
     }
 
