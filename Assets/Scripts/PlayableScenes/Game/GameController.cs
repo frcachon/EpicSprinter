@@ -29,6 +29,7 @@ public class GameController : MonoBehaviour {
     // functions or not (and optimise the game)
     public bool isPlaying;
     public AudioSource coinFX;
+    public AudioSource gameOverFX;
     public TextMeshProUGUI coinsText;
     public TextMeshProUGUI distanceText;
     public TextMeshProUGUI lostText;
@@ -113,8 +114,8 @@ public class GameController : MonoBehaviour {
     // function executed just once (when the player collides with an obstacle)
     public void EndOfGame() {
         isPlaying = false;
+        gameOverFX.Play();
         SaveData();
-
         distanceText.text = "";
         coinsText.text = "";
         lostText.text = "You ran " + distanceCount + "m!";

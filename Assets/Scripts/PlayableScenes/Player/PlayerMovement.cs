@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour {
     private float rotationAngle;
     private int difficulty;
 
+    public AudioSource jumpFX;
+
     void Start() {
         gc = gameController.GetComponent<GameController>();
         smoothness = 22.0f;
@@ -78,6 +80,7 @@ public class PlayerMovement : MonoBehaviour {
 
         // jumping
         if (Input.GetKey(KeyCode.UpArrow)) {
+            jumpFX.Play();
             if (!isJumping) {
                 isJumping = true;
                 StartCoroutine(JumpSequence());
