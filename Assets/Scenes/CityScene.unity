@@ -742,9 +742,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 261776452}
-  - component: {fileID: 261776453}
   - component: {fileID: 261776454}
   - component: {fileID: 261776455}
+  - component: {fileID: 261776456}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -767,29 +767,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &261776453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 261776450}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f85b732cc9ad4fe8bb1d8e6d9272557, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameController: {fileID: 261776450}
-  worlds:
-  - {fileID: 2052092860}
-  - {fileID: 1090214171}
-  - {fileID: 1333131753}
-  zPosWorld: 50
-  creatingWorld: 0
-  secNum: 0
-  terrain: {fileID: 0}
-  zPosTerrain: 125
-  creatingTerrain: 0
 --- !u!114 &261776454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -828,6 +805,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeOutTexture: {fileID: 2800000, guid: 42ffbe3366c994a6ab4aa4edd051bdce, type: 3}
   fadeSpeed: 0.8
+--- !u!114 &261776456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261776450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f85b732cc9ad4fe8bb1d8e6d9272557, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameController: {fileID: 261776450}
+  worlds:
+  - {fileID: 2052092860}
+  - {fileID: 1090214171}
+  - {fileID: 1333131753}
+  zPosWorld: 50
+  creatingWorld: 0
+  secNum: 0
 --- !u!1001 &274998649
 PrefabInstance:
   m_ObjectHideFlags: 0
