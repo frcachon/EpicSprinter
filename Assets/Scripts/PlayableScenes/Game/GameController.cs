@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using TMPro;
 
 public class GameController : MonoBehaviour {
@@ -9,6 +10,12 @@ public class GameController : MonoBehaviour {
     // historic and saved values
     private int allTimeCoins;
     private int highestScore;
+    private float initialVolume;
+    private int backgroundMusic;
+
+    // GameObjects related to volume and music
+    public AudioMixer audioMixer;
+    public AudioSource audioSource;
 
     // values of each game
     private int coinsCount;
@@ -28,11 +35,6 @@ public class GameController : MonoBehaviour {
     private FaderScript faderScript;
     private float fade;
 
-    // enum ExecutionModes {
-    //     Easy,
-    //     Hard
-    // };
-
     // this is just executed once (at the beginning), so the initial values are set here
     void Start() {
         faderScript = gameController.GetComponent<FaderScript>();
@@ -48,6 +50,7 @@ public class GameController : MonoBehaviour {
         newCoinsInfoText.text = "";
 
         LoadData();
+
     }
 
     // coroutine provided for Lab3, adapted for the game
@@ -76,6 +79,16 @@ public class GameController : MonoBehaviour {
     void LoadData() {
         allTimeCoins = PlayerPrefs.GetInt("AllTimeCoins");
         highestScore = PlayerPrefs.GetInt("HighestScore");
+        initialVolume = PlayerPrefs.GetFloat("volume");
+        backgroundMusic = PlayerPrefs.GetInt("backgroundMusic");
+
+        audioMixer.SetFloat("volume", initialVolume);
+
+        if (backgroundMusic == 1) {
+            audioSource.mute = false;
+        } else {
+                audioSource.mute = true;
+        }
     }
 
     // function triggered when colliding with objects tagged as PickUp

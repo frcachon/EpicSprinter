@@ -1265,7 +1265,7 @@ AudioSource:
   m_GameObject: {fileID: 383906961}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 12a289b4beff34e39bb5a9d8cddda681, type: 2}
   m_audioClip: {fileID: 8300000, guid: e7ed11c4bd4644ae08253be818e996ce, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
@@ -1835,6 +1835,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuController: {fileID: 774046762}
+  audioMixer: {fileID: 24100000, guid: 12a289b4beff34e39bb5a9d8cddda681, type: 2}
+  audioSource: {fileID: 383906962}
 --- !u!114 &774046765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4016,9 +4018,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1337313259}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8de640bff3424416fa47fd8c0308a1d8, type: 3}
+  m_Script: {fileID: 11500000, guid: b4d5ec8908e5d444c92577cda3809d6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: 12a289b4beff34e39bb5a9d8cddda681, type: 2}
+  audioSource: {fileID: 383906962}
+  volumeSlider: {fileID: 474691109}
+  backgroundMusicToggle: {fileID: 1721784181}
+  difficultyDropdown: {fileID: 1661224893}
 --- !u!1 &1408474612
 GameObject:
   m_ObjectHideFlags: 0
@@ -4811,7 +4818,19 @@ MonoBehaviour:
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1337313261}
+        m_TargetAssemblyTypeName: SettingsController, Assembly-CSharp
+        m_MethodName: SetDifficulty
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!114 &1661224894
 MonoBehaviour:
@@ -5010,7 +5029,19 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1337313261}
+        m_TargetAssemblyTypeName: SettingsController, Assembly-CSharp
+        m_MethodName: SetBackgroundMusic
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 1
 --- !u!1 &1722767845
 GameObject:

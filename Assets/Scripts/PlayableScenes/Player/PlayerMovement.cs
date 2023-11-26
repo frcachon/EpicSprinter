@@ -15,11 +15,24 @@ public class PlayerMovement : MonoBehaviour {
     private GameController gc;
     private float smoothness;
     private float rotationAngle;
+    private int difficulty;
 
     void Start() {
         gc = gameController.GetComponent<GameController>();
         smoothness = 22.0f;
         rotationAngle = 30.0f;
+        difficulty = PlayerPrefs.GetInt("difficulty");
+        SetSpeed();
+    }
+
+    private void SetSpeed() {
+        if (difficulty == 0) { // easy mode
+            runningSpeed = 12.0f;
+            horizontalSpeed = 9.0f;
+        } else { // difficulty == 0 (hard mode)
+            runningSpeed = 20.0f;
+            horizontalSpeed = 13.0f;
+        }
     }
 
     // player collision with an object tagged as "PickUp"
