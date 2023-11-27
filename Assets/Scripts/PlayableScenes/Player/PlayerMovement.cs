@@ -80,10 +80,12 @@ public class PlayerMovement : MonoBehaviour {
 
         // jumping
         if (Input.GetKey(KeyCode.UpArrow)) {
-            jumpFX.Play();
-            if (!isJumping) {
-                isJumping = true;
-                StartCoroutine(JumpSequence());
+            if (gc.isPlaying) {
+                jumpFX.Play();
+                if (!isJumping) {
+                    isJumping = true;
+                    StartCoroutine(JumpSequence());
+                }
             }
         }
 

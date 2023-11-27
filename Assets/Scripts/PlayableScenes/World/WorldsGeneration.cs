@@ -14,7 +14,7 @@ public class WorldsGeneration : MonoBehaviour {
 
     // variables for new worlds
     public GameObject[] worlds;
-    public int zPosWorld = 50;
+    public int zPosWorld = 150;
     public bool creatingWorld = false;
     public int secNum;
 
