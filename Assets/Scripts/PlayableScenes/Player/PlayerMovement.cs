@@ -95,13 +95,6 @@ public class PlayerMovement : MonoBehaviour {
                 transform.Translate(Vector3.up * Time.deltaTime * -10);
             }
         }
-
-        // sliding
-        // in the future, more logics are expected in order to have a full sliding behaviour
-        // this code just plays the sliding animation when pressing the down arrow key
-        // if (Input.GetKey(KeyCode.DownArrow)) {
-        //     player.GetComponent<Animator>().Play("Running Slide");
-        // }
     }
 
     IEnumerator JumpSequence() {
