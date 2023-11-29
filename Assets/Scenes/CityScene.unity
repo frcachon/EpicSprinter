@@ -1294,7 +1294,7 @@ MonoBehaviour:
   - {fileID: 2052092860}
   - {fileID: 1090214171}
   - {fileID: 1333131753}
-  zPosWorld: 50
+  zPosWorld: 150
   creatingWorld: 0
   secNum: 0
 --- !u!1 &274452666

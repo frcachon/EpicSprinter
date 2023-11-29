@@ -17,7 +17,7 @@ public class Destroyer : MonoBehaviour {
     }
 
     IEnumerator DestroyWorldClones() {
-        yield return new WaitForSeconds(20);
+        yield return new WaitForSeconds(2000);
         if (parentName == "World(Clone)")
         {
             Destroy(gameObject);

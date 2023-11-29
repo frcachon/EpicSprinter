@@ -27,7 +27,7 @@ public class TerrainsGeneration : MonoBehaviour {
         if (difficulty == 0) { // easy mode
             terrainSeconds = 10;
         } else { // difficulty == 0 (hard mode)
-            terrainSeconds = 5;
+            terrainSeconds = 3;
         }
     }
 
