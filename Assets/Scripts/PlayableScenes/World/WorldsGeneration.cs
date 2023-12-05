@@ -42,7 +42,7 @@ public class WorldsGeneration : MonoBehaviour {
         }
     }
 
-    IEnumerator GenerateWorld() { // every 3 seconds, randomly chooses generates a new World
+    IEnumerator GenerateWorld() { // every worldSeconds, randomly chooses generates a new World
         secNum = Random.Range(0, 3);
         Instantiate(worlds[secNum], new Vector3(0, 0, zPosWorld), Quaternion.identity);
         zPosWorld += 50; // this is because 50 is the lenght of every World
